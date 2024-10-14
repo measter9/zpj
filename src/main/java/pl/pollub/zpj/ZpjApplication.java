@@ -74,11 +74,9 @@ public class ZpjApplication {
 
 //		long distinctCount = users.stream().distinct().count();
 //		System.out.println(distinctCount);
-///2.2
         System.out.println("\nPowtarzający się użytkownicy \n");
         Map<User, List<User>> grouped = users.stream().collect(Collectors.groupingBy(Function.identity()));
         grouped.forEach((group, list) -> System.out.println(group + " :" + list.size()));
-///2.3
         System.out.println("\nDeaktywowanie wszystkich użytkowników w drugiej liscie \n");
         List<User> mappedUsers = users2.stream().map(user -> {
             user.setActive(false);
@@ -86,7 +84,6 @@ public class ZpjApplication {
         }).toList();
 
         mappedUsers.stream().distinct().forEach(System.out::println);
-///2.4
         System.out.println("\nZapisanie użytkowników do pliku i odczyt \n");
 		zapis(users.stream(),"users.txt");
         odczyt("users.txt").sorted((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).forEach(System.out::println);
