@@ -1,0 +1,5 @@
+User{id=0, name='Adam', isActive=false, role=CUSTOMER}
+User{id=1, name='Jan', isActive=false, role=CUSTOMER}
+User{id=2, name='Username', isActive=false, role=CUSTOMER}
+User{id=3, name='Adam', isActive=false, role=CUSTOMER}
+User{id=4, name='Jan2', isActive=false, role=CUSTOMER}
