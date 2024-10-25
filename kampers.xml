@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Kampers>
+    <Kamper>
+        <id>1</id>
+        <name>Kamper 1</name>
+        <price>50.0</price>
+    </Kamper>
+    <Kamper>
+        <id>2</id>
+        <name>Kamper 2</name>
+        <price>100.0</price>
+    </Kamper>
+    <Kamper>
+        <id>3</id>
+        <name>Kamper 3</name>
+        <price>200.0</price>
+    </Kamper>
+</Kampers>

@@ -32,7 +32,6 @@ public class ZpjApplication {
         users.get(0).setActive(false);
         users.get(3).setActive(false);
 
-
         ArrayList<User> users2 = new ArrayList<>();
         users2.add(new User(0,"Adam"));
         users2.add(new User(1, "Jan"));
@@ -42,6 +41,35 @@ public class ZpjApplication {
 
 
 ///1
+///3.1
+        List<Kamper> kamperList = new ArrayList<>();
+        kamperList.add(new Kamper(1, "Kamper 1", 50.0));
+        kamperList.add(new Kamper(2, "Kamper 2", 100.0));
+        kamperList.add(new Kamper(3, "Kamper 3", 200.0));
+        //write to XML
+        XMLHandler.writeKampersToXml(kamperList, "kampers.xml");
+        //read kampers from XML
+        try {
+            List<Kamper> readKampers = XMLHandler.readKampersFromXml("kampers.xml");
+            readKampers.forEach(System.out::println);
+        } catch (InvalidDataException e) {
+            System.err.println(e.getMessage());
+        }
+        //orders
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(new Order(1, kamperList.get(0),8));
+        orderList.add(new Order(2, kamperList.get(1),10));
+        orderList.add(new Order(3, kamperList.get(2),2));
+        orderList.add(new Order(4, null,3));
+        XMLHandler.writeOrderToXml(orderList, "orders.xml");
+
+        try {
+            List<Order> readOrders = XMLHandler.readOrdersFromXml("orders.xml");
+            readOrders.forEach(System.out::println);
+        } catch (InvalidDataException e) {
+            System.err.println(e.getMessage());
+        }
+///2.1
         System.out.println("Aktywni Użytkownicy: \n");
         Stream<User> stream = users.stream().filter(user -> user.isActive());
         stream.forEach(System.out::println);
@@ -53,6 +81,9 @@ public class ZpjApplication {
         Map<User, List<User>> grouped = users.stream().collect(Collectors.groupingBy(Function.identity()));
         grouped.forEach((group, list) -> System.out.println(group + " :" + list.size()));
 ///3
+        System.out.println("\nPowtarzający się użytkownicy \n");
+        grouped = users.stream().collect(Collectors.groupingBy(Function.identity()));
+        grouped.forEach((group, list) -> System.out.println(group + " :" + list.size()));
         System.out.println("\nDeaktywowanie wszystkich użytkowników w drugiej liscie \n");
         List<User> mappedUsers = users2.stream().map(user -> {
             user.setActive(false);
@@ -60,6 +91,7 @@ public class ZpjApplication {
         }).toList();
 
         mappedUsers.stream().distinct().forEach(System.out::println);
+
 ///4
         System.out.println("\nZapisanie użytkowników do pliku i odczyt \n");
 		zapis(users.stream(),"users.txt");

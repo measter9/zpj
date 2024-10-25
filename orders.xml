@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Orders>
+    <Order>
+        <duration>8</duration>
+        <kamper>
+            <id>1</id>
+            <name>Kamper 1</name>
+            <price>50.0</price>
+        </kamper>
+        <orderId>1</orderId>
+    </Order>
+    <Order>
+        <duration>10</duration>
+        <kamper>
+            <id>2</id>
+            <name>Kamper 2</name>
+            <price>100.0</price>
+        </kamper>
+        <orderId>2</orderId>
+    </Order>
+    <Order>
+        <duration>2</duration>
+        <kamper>
+            <id>3</id>
+            <name>Kamper 3</name>
+            <price>200.0</price>
+        </kamper>
+        <orderId>3</orderId>
+    </Order>
+</Orders>
