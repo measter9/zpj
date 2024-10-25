@@ -1,11 +1,10 @@
-package pl.pollub.zpj;
+package pl.pollub.zpj.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 @Getter @Setter
 @NoArgsConstructor

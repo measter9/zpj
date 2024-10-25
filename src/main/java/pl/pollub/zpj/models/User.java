@@ -1,4 +1,4 @@
-package pl.pollub.zpj;
+package pl.pollub.zpj.models;
 
 import lombok.*;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-enum Role{
+public enum Role{
     CUSTOMER,
     ADMIN,
     EMPLOYEE
@@ -23,13 +23,6 @@ public class User implements Serializable {
     private boolean isActive;
     @Setter
     private Role role;
-
-//    public User(int id, String name){
-//        this.id = id;
-//        this.name = name;
-//        this.isActive = true;
-//        this.role = Role.CUSTOMER;
-//    }
 
     public User(String userString){
         Pattern pattern = Pattern.compile("User\\{id=(\\d*), name='(.*)', isActive=(true|false), role=(CUSTOMER|EMPLOYEE|ADMIN)}");
