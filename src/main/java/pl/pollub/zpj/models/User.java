@@ -6,11 +6,6 @@ import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public enum Role{
-    CUSTOMER,
-    ADMIN,
-    EMPLOYEE
-}
 @Getter(AccessLevel.PUBLIC)
 @RequiredArgsConstructor
 @AllArgsConstructor
