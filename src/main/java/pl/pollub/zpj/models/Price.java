@@ -10,10 +10,10 @@ import java.util.List;
 @ToString
 @Builder
 public class Price {
-private int Id;
-private double price;
-private Date begins;
-private Date ends;
-@Singular("kamper")
-List<Kamper> kamperList;
+    private int Id;
+    private double price;
+    private Date begins;
+    private Date ends;
+    @Singular("kamper")
+    List<Kamper> kamperList;
 }

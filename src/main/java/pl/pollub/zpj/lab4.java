@@ -1,9 +1,9 @@
 package pl.pollub.zpj;
 
 import pl.pollub.zpj.DTOs.KamperDTO;
-import pl.pollub.zpj.models.Inspection;
-import pl.pollub.zpj.models.Kamper;
-import pl.pollub.zpj.models.Price;
+import pl.pollub.zpj.DTOs.OrderDTO;
+import pl.pollub.zpj.DTOs.UserDTO;
+import pl.pollub.zpj.models.*;
 
 import java.sql.Date;
 
@@ -24,8 +24,28 @@ public class lab4 {
                 .kamper(kamper)
                 .build());
 
+        System.out.println(Service.builder()
+                .price(321.1)
+                .date(new Date(System.currentTimeMillis()))
+                .Name("Naprawa")
+                .kamper(kamper)
+                .Description("Prosta naprawa kamepra")
+                .build());
 
-        KamperDTO kamperDTO = new KamperDTO("test2",123);
+        Order order = new Order(12,kamper,12);
+        KamperDTO kamperDTO = new KamperDTO(kamper);
+        System.out.println(kamperDTO);
+        Kamper k2 = kamperDTO.toEntity();
+        System.out.println(k2);
+
+        OrderDTO orderDTO = new OrderDTO(order);
+        System.out.println(orderDTO);
+        System.out.println(orderDTO.toEntity());
+
+        User user = new User(1,"username");
+        UserDTO userDTO = new UserDTO(user);
+        System.out.println(userDTO);
+        System.out.println(userDTO.toEntity());
 
 
     }

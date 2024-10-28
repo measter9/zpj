@@ -1,9 +1,6 @@
 package pl.pollub.zpj.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.xml.bind.annotation.XmlRootElement;
 @Getter @Setter
@@ -12,8 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Kamper")
 public class Kamper {
     private int id;
-    private String name;
-    private double price;
+    private @NonNull String name;
+    private  double price;
 
     @Override
     public String toString() {
