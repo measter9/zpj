@@ -1,7 +1,7 @@
 package pl.pollub.zpj;
 
-import lombok.Getter;
-import lombok.Setter;
+import pl.pollub.zpj.models.Order;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;

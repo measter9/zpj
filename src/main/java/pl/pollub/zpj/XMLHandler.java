@@ -1,5 +1,8 @@
 package pl.pollub.zpj;
 
+import pl.pollub.zpj.models.Kamper;
+import pl.pollub.zpj.models.Order;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
