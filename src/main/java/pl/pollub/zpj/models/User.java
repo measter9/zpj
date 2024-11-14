@@ -1,20 +1,26 @@
 package pl.pollub.zpj.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
 @Getter(AccessLevel.PUBLIC)
 @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {
-    @NonNull@Setter
+    @NonNull @Setter
+    @Id
+    @GeneratedValue
     private int id;
-    @NonNull@Setter
+    @NonNull @Setter
     private String name;
     @Setter
     @JsonProperty("isActive")

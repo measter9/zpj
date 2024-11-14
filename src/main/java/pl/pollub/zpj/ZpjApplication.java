@@ -1,7 +1,7 @@
 package pl.pollub.zpj;
 
 import pl.pollub.zpj.models.Kamper;
-import pl.pollub.zpj.models.Order;
+import pl.pollub.zpj.models.Orders;
 import pl.pollub.zpj.models.Role;
 import pl.pollub.zpj.models.User;
 
@@ -60,15 +60,15 @@ public class ZpjApplication {
             System.err.println(e.getMessage());
         }
         //orders
-        List<Order> orderList = new ArrayList<>();
-        orderList.add(new Order(1, kamperList.get(0),8));
-        orderList.add(new Order(2, kamperList.get(1),10));
-        orderList.add(new Order(3, kamperList.get(2),2));
-        orderList.add(new Order(4, null,3));
+        List<Orders> orderList = new ArrayList<>();
+        orderList.add(new Orders(1, kamperList.get(0),8));
+        orderList.add(new Orders(2, kamperList.get(1),10));
+        orderList.add(new Orders(3, kamperList.get(2),2));
+        orderList.add(new Orders(4, null,3));
         XMLHandler.writeOrderToXml(orderList, "orders.xml");
 
         try {
-            List<Order> readOrders = XMLHandler.readOrdersFromXml("orders.xml");
+            List<Orders> readOrders = XMLHandler.readOrdersFromXml("orders.xml");
             readOrders.forEach(System.out::println);
         } catch (InvalidDataException e) {
             System.err.println(e.getMessage());

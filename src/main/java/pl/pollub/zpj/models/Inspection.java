@@ -1,17 +1,25 @@
 package pl.pollub.zpj.models;
 
-import lombok.Builder;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.sql.Date;
-import java.util.List;
+
+@Entity
 @ToString
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Inspection {
+        @Id
+        @GeneratedValue
         private int Id;
         private String name;
         private Date ValidUntil;
         private String description;
+        @ManyToOne
         private Kamper kamper;
 
 }
