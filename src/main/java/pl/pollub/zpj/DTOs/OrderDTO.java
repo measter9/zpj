@@ -11,17 +11,17 @@ import pl.pollub.zpj.models.Orders;
 @Getter
 @ToString
 public class OrderDTO {
-    final private @NonNull Kamper kamper;
+    final private @NonNull int kamperid;
     final @NonNull int duration;
 
     public OrderDTO(Orders order) {
-        this.kamper = order.getKamper();
+        this.kamperid = order.getKamper().getId();
         this.duration = order.getDuration();
     }
 
     public Orders toEntity() {
         Orders order = new Orders();
-        order.setKamper(this.kamper);
+//        order.setKamper(this.kamper);
         order.setDuration(this.duration);
         return order;
     }
