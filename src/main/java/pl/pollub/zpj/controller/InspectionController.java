@@ -1,5 +1,6 @@
 package pl.pollub.zpj.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.NotFound;
@@ -24,6 +25,7 @@ public class InspectionController {
     @Autowired
     InspectionService inspectionService;
 
+    @Operation(summary ="find inspections by camper id")
     @GetMapping(path = "/{id}" )
     Iterable<Inspection> getInspectionsForVehicleId(@PathVariable int id){
         return inspectionService.findByKamperId(id);

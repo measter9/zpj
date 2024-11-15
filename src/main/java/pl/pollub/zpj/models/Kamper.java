@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement(name = "Kamper")
+@XmlRootElement(name = "Kamper")    
 @Table( name = "kampery")
 public class Kamper implements Serializable {
     @Id
