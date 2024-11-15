@@ -4,9 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.Builder;
-import lombok.Singular;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Date;
 import java.util.List;
@@ -14,6 +12,11 @@ import java.util.List;
 @Entity
 @ToString
 @Builder
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Price {
     @Id
     @GeneratedValue
