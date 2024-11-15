@@ -1,6 +1,7 @@
 package pl.pollub.zpj.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.NotFound;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/inspection")
+@Tag(name = "Inspection Controller", description = "Hibernate")
 @RequiredArgsConstructor
 public class InspectionController {
 

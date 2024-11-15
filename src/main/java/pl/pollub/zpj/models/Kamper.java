@@ -1,9 +1,6 @@
 package pl.pollub.zpj.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
@@ -12,7 +9,7 @@ import java.io.Serializable;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement(name = "Kamper")    
+@XmlRootElement(name = "Kamper")
 @Table( name = "kampery")
 public class Kamper implements Serializable {
     @Id

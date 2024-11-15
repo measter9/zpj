@@ -1,6 +1,7 @@
 package pl.pollub.zpj.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -15,6 +16,7 @@ import pl.pollub.zpj.services.OrderService;
 
 @RestController
 @RequestMapping(path = "/order")
+@Tag(name = "Order Controller", description = "Hibernate")
 @RequiredArgsConstructor
 public class OrderController {
     @Autowired
