@@ -5,23 +5,23 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import pl.pollub.zpj.models.Kamper;
-import pl.pollub.zpj.models.Order;
+import pl.pollub.zpj.models.Orders;
 
 @RequiredArgsConstructor
 @Getter
 @ToString
 public class OrderDTO {
-    final private @NonNull Kamper kamper;
+    final private @NonNull int kamperid;
     final @NonNull int duration;
 
-    public OrderDTO(Order order) {
-        this.kamper = order.getKamper();
+    public OrderDTO(Orders order) {
+        this.kamperid = order.getKamper().getId();
         this.duration = order.getDuration();
     }
 
-    public Order toEntity() {
-        Order order = new Order();
-        order.setKamper(this.kamper);
+    public Orders toEntity() {
+        Orders order = new Orders();
+//        order.setKamper(this.kamper);
         order.setDuration(this.duration);
         return order;
     }

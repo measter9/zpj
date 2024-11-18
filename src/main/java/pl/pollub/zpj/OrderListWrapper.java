@@ -1,6 +1,6 @@
 package pl.pollub.zpj;
 
-import pl.pollub.zpj.models.Order;
+import pl.pollub.zpj.models.Orders;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -9,16 +9,16 @@ import java.util.List;
 
 @XmlRootElement(name = "Orders")
 public class OrderListWrapper {
-    private List<Order> orders = new ArrayList<>();
+    private List<Orders> orders = new ArrayList<>();
     public OrderListWrapper() {
         // Required by JAXB
     }
     @XmlElement(name = "Order")
-    public List<Order> getOrders() {
+    public List<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Orders> orders) {
         this.orders = orders;
     }
 }

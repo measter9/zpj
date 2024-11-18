@@ -1,7 +1,7 @@
 package pl.pollub.zpj;
 
 import pl.pollub.zpj.models.Kamper;
-import pl.pollub.zpj.models.Order;
+import pl.pollub.zpj.models.Orders;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -37,7 +37,7 @@ public class XMLHandler {
         }
     }
 
-    private static void validateOrder(Order order) throws InvalidDataException {
+    private static void validateOrder(Orders order) throws InvalidDataException {
         if (order.getOrderId() <= 0) {
             throw new InvalidDataException("Invalid orderID: " + order.getOrderId());
         }
@@ -48,10 +48,10 @@ public class XMLHandler {
             throw new InvalidDataException("Invalid duration");
         }
     }
-    public static void writeOrderToXml(List<Order> orders, String filename) {
+    public static void writeOrderToXml(List<Orders> orders, String filename) {
         OrderListWrapper wrapper = new OrderListWrapper();
-        List<Order> validOrders = new ArrayList<>();
-        for (Order order : orders) {
+        List<Orders> validOrders = new ArrayList<>();
+        for (Orders order : orders) {
             try {
                 validateOrder(order);
                 validOrders.add(order);
@@ -74,7 +74,7 @@ public class XMLHandler {
         }
     }
 
-    public static List<Order> readOrdersFromXml(String filename) throws InvalidDataException {
+    public static List<Orders> readOrdersFromXml(String filename) throws InvalidDataException {
         try {
             JAXBContext context = JAXBContext.newInstance(OrderListWrapper.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();

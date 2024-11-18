@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import pl.pollub.zpj.models.Order;
 import pl.pollub.zpj.models.Role;
 import pl.pollub.zpj.models.User;
 

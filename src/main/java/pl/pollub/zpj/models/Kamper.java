@@ -1,13 +1,19 @@
 package pl.pollub.zpj.models;
 
+import jakarta.persistence.*;
 import lombok.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
+@Entity
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "Kamper")
-public class Kamper {
+@Table( name = "kampery")
+public class Kamper implements Serializable {
+    @Id
+    @GeneratedValue
     private int id;
     private @NonNull String name;
     private  double price;

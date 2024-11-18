@@ -32,7 +32,7 @@ public class lab4 {
                 .Description("Prosta naprawa kamepra")
                 .build());
 
-        Order order = new Order(12,kamper,12);
+        Orders order = new Orders(12,kamper,12);
         KamperDTO kamperDTO = new KamperDTO(kamper);
         System.out.println(kamperDTO);
         Kamper k2 = kamperDTO.toEntity();
