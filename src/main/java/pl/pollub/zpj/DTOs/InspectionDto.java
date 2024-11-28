@@ -1,6 +1,7 @@
 package pl.pollub.zpj.DTOs;
 
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import pl.pollub.zpj.models.Inspection;
 
@@ -8,6 +9,7 @@ import java.sql.Date;
 import java.sql.SQLOutput;
 
 @Getter
+@AllArgsConstructor
 public class InspectionDto {
     private String name;
     private Date validUntil;
