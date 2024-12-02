@@ -22,11 +22,20 @@ public class User implements Serializable {
     private int id;
     @NonNull @Setter
     private String name;
+    @NonNull @Setter
+    private String email;
+    @NonNull @Setter
+    private String password;
     @Setter
     @JsonProperty("isActive")
     private boolean isActive;
     @Setter
     private Role role;
+    public User(String name, String email, String password){
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 
     public User(String userString) {
         Pattern pattern = Pattern.compile("User\\{id=(\\d*), name='(.*)', isActive=(true|false), role=(CUSTOMER|EMPLOYEE|ADMIN)}");
@@ -39,6 +48,11 @@ public class User implements Serializable {
         } else {
             System.out.println("Deserialization failed");
         }
+    }
+
+    public User(int i, String username) {
+        this.id = i;
+        this.name = username;
     }
 
 

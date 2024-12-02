@@ -21,6 +21,6 @@ final private @NonNull Role role;
         this.role = user.getRole();
     }
     public User toEntity(){
-        return new User(1,this.getName(),this.isActive, this.getRole());
+        return new User(1,this.getName(),null,null,this.isActive, this.getRole());
     }
 }
