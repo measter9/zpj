@@ -1,6 +1,6 @@
 package pl.pollub.zpj.services;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import pl.pollub.zpj.repository.KamperRepository;
 import pl.pollub.zpj.repository.OrderRepository;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class OrderService {
     @Autowired
     OrderRepository orderRepository;

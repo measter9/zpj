@@ -4,18 +4,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import pl.pollub.zpj.models.User;
 import pl.pollub.zpj.models.Role;
-
 import java.util.List;
 
 @Repository
 public class UserRepository {
-
     private final JdbcTemplate jdbcTemplate;
-
     public UserRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-
     public User save(User user) {
         if (user.getId() == 0) {
             String sql = "INSERT INTO users (name, isActive, role) VALUES (?, ?, ?)";

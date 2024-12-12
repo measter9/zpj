@@ -2,7 +2,6 @@ package pl.pollub.zpj.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.sql.Date;
 
 @Entity
@@ -12,7 +11,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Inspection {
+public class Inspection{
         @Id
         @GeneratedValue
         private int Id;

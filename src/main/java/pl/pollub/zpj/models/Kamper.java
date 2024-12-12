@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @XmlRootElement(name = "Kamper")
 @Table( name = "kampery")
-public class Kamper implements Serializable {
+public class Kamper implements Serializable{
     @Id
     @GeneratedValue
     private int id;
@@ -19,7 +19,7 @@ public class Kamper implements Serializable {
     private  double price;
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Kamper{" +
                 "id= " + id +
                 ", name= '" + name + ", price= '" + price + '\'' +

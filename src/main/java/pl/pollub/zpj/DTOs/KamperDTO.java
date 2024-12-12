@@ -1,15 +1,13 @@
 package pl.pollub.zpj.DTOs;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import pl.pollub.zpj.models.Kamper;
 
 @RequiredArgsConstructor
+@Setter
 @Getter
 @ToString
-public class KamperDTO {
+public class KamperDTO{
     final private @NonNull String name;
     final private @NonNull double price;
 

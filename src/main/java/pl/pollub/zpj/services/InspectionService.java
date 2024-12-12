@@ -1,9 +1,7 @@
 package pl.pollub.zpj.services;
 
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import pl.pollub.zpj.DTOs.InspectionDto;
@@ -14,20 +12,16 @@ import pl.pollub.zpj.repository.KamperRepository;
 @Service
 @RequiredArgsConstructor
 public class InspectionService {
-
     @Autowired
     InspectionRepostiory inspectionRepostiory;
     @Autowired
     KamperRepository kamperRepository;
-
     public Iterable<Inspection> findByKamperId(int id) {
         return inspectionRepostiory.findByKamperId(id);
     }
-
     public Iterable<Inspection> findAll() {
         return inspectionRepostiory.findAll();
     }
-
     public Inspection createInspection(InspectionDto inspectionDto) {
         Inspection i = inspectionDto.toEntity();
         i.setKamper(kamperRepository.findById(inspectionDto.getKamperId()));
@@ -49,7 +43,6 @@ public class InspectionService {
         i.setId(id);
         i.setKamper( kamperRepository.findById(inspectionDto.getKamperId()));
         inspectionRepostiory.save(i);
-
         return i;
     }
 }

@@ -15,7 +15,7 @@ import pl.pollub.zpj.services.PriceService;
 @RequiredArgsConstructor
 @RequestMapping(path = "/price")
 @Tag(name = "Price Controller", description = "Hibernate")
-public class PriceController {
+public class PriceController{
     @Autowired
     PriceService priceService;
 

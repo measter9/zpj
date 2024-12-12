@@ -10,8 +10,7 @@ import pl.pollub.zpj.models.User;
 import pl.pollub.zpj.repository.UserHibernateRepository;
 
 @RestController
-public class RegistrationController {
-
+public class RegistrationController{
     @Autowired
     private UserHibernateRepository userRepository;
     @Autowired

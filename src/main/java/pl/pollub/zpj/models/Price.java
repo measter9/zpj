@@ -5,14 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.*;
-
 import java.sql.Date;
 import java.util.List;
 
 @Entity
 @ToString
 @Builder
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
