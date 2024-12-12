@@ -7,11 +7,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.pollub.zpj.repository.UserHibernateRepository;
-
 import java.util.Optional;
+
 @Service
 @AllArgsConstructor
-public class myUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class myUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService{
     @Autowired
     private UserHibernateRepository userRepository;
     @Override
@@ -19,7 +19,6 @@ public class myUserDetailsService implements org.springframework.security.core.u
         Optional<pl.pollub.zpj.models.User> user = userRepository.findByName(username);
         if(user.isPresent()){
             var userObj = user.get();
-
             if(userObj.isActive()){
                 UserDetails userDetails =  User.builder()
                         .username(userObj.getName())

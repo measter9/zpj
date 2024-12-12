@@ -15,7 +15,7 @@ import pl.pollub.zpj.services.ServiceService;
 @RequiredArgsConstructor
 @RequestMapping(path = "/service")
 @Tag(name = "Service Controller", description = "Hibernate")
-public class ServiceController {
+public class ServiceController{
     @Autowired
     ServiceService serviceService;
 

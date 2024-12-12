@@ -8,8 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class ServiceDTO {
-
+public class ServiceDTO{
     private String Name;
     private String Description;
     private double price;

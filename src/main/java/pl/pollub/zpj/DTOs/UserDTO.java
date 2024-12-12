@@ -1,21 +1,19 @@
 package pl.pollub.zpj.DTOs;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import pl.pollub.zpj.models.Role;
 import pl.pollub.zpj.models.User;
 
 @RequiredArgsConstructor
 @Getter
+@Setter
 @ToString
-public class UserDTO {
+public class UserDTO{
 final private  @NonNull String name;
 final private @NonNull boolean isActive;
 final private @NonNull Role role;
 
-    public UserDTO(User user) {
+    public UserDTO(User user){
         this.isActive = user.isActive();
         this.name = user.getName();
         this.role = user.getRole();

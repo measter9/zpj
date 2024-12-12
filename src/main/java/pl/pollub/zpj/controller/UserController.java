@@ -5,13 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.pollub.zpj.models.User;
 import pl.pollub.zpj.services.UserService;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
-
+public class UserController{
     private final UserService userService;
 
     @Autowired

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.pollub.zpj.models.User;
 import pl.pollub.zpj.repository.UserRepository;
-
 import java.util.List;
 
 @Service

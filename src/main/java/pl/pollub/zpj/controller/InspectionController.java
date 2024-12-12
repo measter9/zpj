@@ -2,31 +2,24 @@ package pl.pollub.zpj.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pl.pollub.zpj.DTOs.InspectionDto;
 import pl.pollub.zpj.models.Inspection;
-import pl.pollub.zpj.repository.InspectionRepostiory;
 import pl.pollub.zpj.services.InspectionService;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/inspection")
 @Tag(name = "Inspection Controller", description = "Hibernate")
 @RequiredArgsConstructor
-public class InspectionController {
-
+public class InspectionController{
     @Autowired
     InspectionService inspectionService;
-
     @Operation(summary ="find inspections by camper id")
     @GetMapping(path = "/{id}" )
     Iterable<Inspection> getInspectionsForVehicleId(@PathVariable int id){

@@ -8,9 +8,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import pl.pollub.zpj.DTOs.InspectionDto;
 import pl.pollub.zpj.DTOs.OrderDTO;
-import pl.pollub.zpj.models.Inspection;
 import pl.pollub.zpj.models.Orders;
 import pl.pollub.zpj.services.OrderService;
 
@@ -18,10 +16,9 @@ import pl.pollub.zpj.services.OrderService;
 @RequestMapping(path = "/order")
 @Tag(name = "Order Controller", description = "Hibernate")
 @RequiredArgsConstructor
-public class OrderController {
+public class OrderController{
     @Autowired
     OrderService orderService;
-
     @Operation(summary ="find orders by camper id")
     @GetMapping(path = "/{id}" )
     Iterable<Orders> getInspectionsForVehicleId(@PathVariable int id){
